@@ -1,0 +1,70 @@
+
+body,html{
+  height: 100%;
+}
+#app {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[data-theme='dark'] {
+  &,
+  * {
+    color-scheme: dark !important;
+  }
+}
+
+[data-theme='light'] {
+  &,
+  * {
+    color-scheme: light !important;
+  }
+
+  body {
+    background-color: #eff2f5;
+  }
+}
+
+// 基础主题色覆盖
+:root:root {
+  --van-primary-color: #384B9E;
+  .van-picker-column__item--selected{
+    color: var(--van-primary-color);
+  }
+}
+// 主题渐变色btn
+.primaryBtn{
+  background: linear-gradient(180deg, #FF6500 0%, #FF1700 100%);
+}
+// 禁用btn
+.disabledBtn{
+  background: #DCDCDC;
+}
+.titleBg{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  z-index: 5;
+  &::after{
+    content: '';
+    height: 9px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.34;
+    z-index: -1;
+    width: 120%;
+    background: linear-gradient(270deg, #F73439 0%, #FFCA8F 68%, #F5F5F5 100%);
+    border-radius: 5px;
+  }
+}
